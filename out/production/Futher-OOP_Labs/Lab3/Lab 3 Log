@@ -1,0 +1,70 @@
+The Java reflection API is to inspect class relationships
+and object graphs.
+object graphs -
+
+What is Reflection API?
+Reflection enables Java code to discover information about the fields.
+
+
+Exercises
+T\1. Take a set of Java classes as input.
+T\2. Produce text output in the Mermaid UML class format.
+T\3 Then copy and paste the text into a mermaid web page to produce the diagram.
+
+*Java Graphics API - Work on rendering graphical diagrams directly.
+
+T\1.
+For each class, we need to find:
+● Name
+● Constructors (full signature)
+● Methods (full signature)
+● Fields (name, type)
+● maybe also, some modifiers (e.g. private, static))
+
+And then the relationship between each class in the diagram:
+● Inheritance
+● Other forms of association: although there are many types, we’re going to lump all the
+non-inheritance together under the umbrella term dependency.
+
+Limitations:
+--- Reflection does not permit access to method implementations.---
+
+Exercise 1
+Extend PrintClassDetails to print each method signature: its name, return type and parameter
+names and types. Add a method with parameters to the MyCircle class in order to check it
+works (hint: it should be similar to how the Constructor details are printed, except that methods
+also have a return type).
+
+Exercise 2: List Method Details (2)
+These are currently missing, add them in, including return types.
+
+Exercise 3: Fix problem with Parameterised Types (4)
+MyCircle has a field of type Set<Connector>, and therefore depends on the Connector class.
+This has been missed both in the Field listing in the diagram, and in the dependency
+relationships (even though it was listed in the printout earlier!).
+
+UMLShapesExample- Output
+----
+classDiagram
+class MyCircle {
+~ radius: double
+~ static: pi: double
+~ circles: Set
++ area()
++ calculateSemiCircle()
+}
+class Connector {
+- radius: double
++ equals()
++ toString()
++ hashCode()
++ radius()
+}
+class MyShape {
++ area()
+}
+MyShape <|-- MYCIRCLE
+MyCircle ..> CONNECTOR
+
+
+Process finished with exit code 0

@@ -1,0 +1,8 @@
+Implementation
+1. A set of pieces of various sizes
+# not limited to 4 cells (i.e can be less than 4)
+2. A piece buffer - showing the currently available pieces.
+3. Puzzle model
+4. Detection of gameover
+5. Score
+6 Game model - to test game logic

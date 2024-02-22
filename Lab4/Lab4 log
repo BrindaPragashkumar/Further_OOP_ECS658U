@@ -1,0 +1,35 @@
+Use reflection in a dynamic way.
+- inorder to inspect the state of an object graph.
+
+What is Object Graph?
+
+An Object Graph is the set of objects which
+will be serialized automatically.
+
+Exercise 1:
+Accessing the Private Fields (2)
+
+By inserting the line << f.setAccessible(true) >>
+we see:
+java.lang.IllegalAccessException:
+ class Lab4.BasicStringify cannot access a member of
+class Lab4.RecordClass with modifiers "private final"
+java.lang.IllegalAccessException:
+ class Lab4.BasicStringify cannot
+ access a member of class Lab4.RecordClass with modifiers "private final"
+
+
+Exercise 2: Recursive Exploration of Object Graph (5)
+This involves:
+
+1. The recursive call
+
+2. Pretty printing: tab in according to depth in graph
+
+3. Handle cycles in the graph: if we’ve already visited an Object, then don’t recursively
+explore it again, just print a reference to it. You can choose how to do this - for example,
+keep a HashMap<Object,Integer> of all objects visited so far, where the Integer field is
+used to store the object id. A fine approach here would be to start at 0 and count up.
+4. Special access. Without special measures, access to the fields of an Integer will fail.
+The easiest way to overcome this is to run the JVM with special permissions.
+5. Handle arrays

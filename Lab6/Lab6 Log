@@ -1,0 +1,32 @@
+Exercise 1: Implement Rectangle and Polygon (3)
+● 1 mark for Rectangle
+● 1 mark for Polygon area
+● 1 mark for Polygon perimeter
+
+output:
+Screenshot//
+
+Exercise 2: Visual Shapes (3)
+The exercise now is to take the basic shapes and develop graphical versions.
+Marking scheme:
+● 1 mark: fix centre offset in DrawablePolygon
+● 1 mark: implement DrawableRectangle
+● 1 mark: implement DrawableCircle
+
+
+● What (if any) advantage is there to have a Tile class?
+Tile class encapsulates the details of a tile.
+The Tile class inherits functionality from DrawablePolygon, promoting code reusability.
+
+An alternative to consider: we could just use DrawablePolygon and call the Geometry methods directly.
+
+● What is the time complexity of testing the following given a polygon or polygons with N
+vertices?:
+
+○ Whether a polygon contains a point
+O(N)
+○ Whether a polygon intersects another polygon
+n**2
+○ The area of a polygon
+O(N)
+
